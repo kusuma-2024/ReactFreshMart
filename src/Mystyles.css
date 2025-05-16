@@ -1,0 +1,120 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* First Header - Compact Navbar */
+.navbar-top {
+  background-color: #020607;
+  padding: 0.25rem 0.25rem; /* Reduced padding for a smaller navbar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar-top .logo h3 {
+  margin: 0;
+  color: white;
+  font-size: 1.5rem; /* Adjusted font size */
+  font-weight: 700;
+}
+
+.button-link {
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  background-color: rgb(247, 151, 151);
+  color: black;
+  border: 2px solid rgb(132, 19, 19);
+  border-radius: 2px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.button-link:hover {
+  background-color: white;
+  color: #040a0f;
+  border-color: #070c0f;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(185, 46, 46, 0.15);
+}
+
+/* Second Header - Navbar Links */
+.navbar-bottom {
+  background-color: rgb(253, 228, 253);
+  padding: 0rem;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  position: fixed;
+  top: 50px; /* Adjusted to stay under the first header */
+  width: 100%;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  color: rgb(12, 3, 3);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #c7caca;
+}
+
+.home-link:hover {
+  background-color: #c7caca;
+}
+
+.about-link:hover {
+  background-color: #642a7b;
+}
+
+.contact-link:hover {
+  background-color: #693507;
+}
+
+.nonveg-link:hover {
+  background-color: #1a0401;
+}
+
+.veg-link:hover {
+  background-color: #4a2e7d;
+}
+
+.fruits-link:hover {
+  background-color: #f1c40f;
+  color: black;
+}
+
+.choc-link:hover {
+  background-color: #4f0370;
+}
+
+.cart-link:hover {
+  background-color: #f1e349;
+}
+
+.orders-link:hover {
+  background-color: #a0145a;
+}
+
+/* Add padding to body to prevent content from being hidden under the fixed navbar*
