@@ -59,7 +59,7 @@ function Veg() {
         <h3 className="veg-title">Explore Our Fresh Veg Items</h3>
 
         {/* Price Filter */}
-        <div className="price-filter">
+        <div className="filter-container">
           <h4>Filter by Price</h4>
           {priceRanges.map((range) => (
             <div key={range.label}>

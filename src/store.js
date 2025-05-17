@@ -1,4 +1,4 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit";
+import { configureStore, createSlice, current } from "@reduxjs/toolkit";
 
 const savedcart=localStorage.getItem("cart");
 const localStoragecart=savedcart?JSON.parse(savedcart):[];
@@ -148,12 +148,42 @@ const orderSlice = createSlice({
   }
 });
 
+const userSlice=createSlice({
+  name:"users",
+  initialState:{
+    users:[],
+    isAuthenticated:false,
+    currentuser:null
+  },
+  reducers:{
+    registerUser:(state,action)=>{
+      state.users.push(action,payload);
+    },
+    loginUser:(state,inputData)=>{
+      const foundeUser=state.users.find(
+        user=>user.userName===inputData.payload.userName&&user.password===inputData.password
+      );
+      if(foundeUser){
+        state.isAuthenticated=true;
+        state.currentuser=foundeUser;
+      }
+      else{
+        alert("Invalid Credentials");
+      }
+    },
+    logout:(state)=>{
+      state.isAuthenticated=false;
+      state.currentuser=null;
+    }
+  }
+});
+
         const store =configureStore({
           reducer:{
             products:productsSlice.reducer,
             cart:cartSlice.reducer,
             orders:orderSlice.reducer,
-
+            users: userSlice.reducer, // Add this line
           }
         });
 
@@ -162,6 +192,7 @@ const orderSlice = createSlice({
         localStorage.setItem("cart",JSON.stringify(state.cart));
         });
 
+      export const{registerUser,logout,loginUser}=userSlice.actions;
       export const { addOrder } = orderSlice.actions;
       export const{Addtocart,incrementQuantity,decrementQuantity,removeItem,clearCart}=cartSlice.actions;
   

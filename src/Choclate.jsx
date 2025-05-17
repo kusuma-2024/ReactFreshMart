@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { Addtocart} from './Store';
+import { Addtocart} from './store';
 import './Choclate.css';
 import { toast, ToastContainer } from 'react-toastify';
 

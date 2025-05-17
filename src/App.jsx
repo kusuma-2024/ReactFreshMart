@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Link, Routes, Route } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Home from './Home';
 import NonVeg from './NonVeg';
 import Veg from './Veg';
@@ -13,18 +13,30 @@ import ContactUs from './ContactUs';
 import Signing from './Signing';
 import './Mystyles.css';
 import Pagenotfound from './pagenotfound';
+import SignUp from './SignUp';
 
 function App() {
   const cart = useSelector((state) => state.cart);
   const totalCartCount = cart.reduce((total, item) => total + item.quantity, 0);
 
+  const isAuthenticated = useSelector((state) => state.users.isAuthenticated);
+  const currentUser = useSelector((state) => state.users.currentUser);
+  const dispatch = useDispatch();
+
   return (
     <BrowserRouter>
-      <header className="navbar-top">
+       <header className="navbar-top">
         <div className="logo">
           <h3>🛒 Fresh Mart</h3>
         </div>
-        <Link to="/Signing" className="button-link">Sign In</Link>
+        {isAuthenticated ? (
+          <div className="user-info">
+            <span>Welcome, {currentUser.userName}</span>
+            <button onClick={() => dispatch(logout())}>Log Out</button>
+          </div>
+        ) : (
+          <Link to="/Signing" className="button-link">Sign In</Link>
+        )}
       </header>
 
       <nav className="navbar-bottom">
@@ -52,6 +64,7 @@ function App() {
         <Route path="/AboutUs" element={<AboutUs />} />
         <Route path="/ContactUs" element={<ContactUs />} />
         <Route path="/Signing" element={<Signing />} />
+        <Route path='/SignUp' element={<SignUp/>}/>
         <Route path="/*" element={<Pagenotfound />} />
 
       </Routes>
