@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Addtocart } from './store';
-import './Nonveg.css';
+import './Nonveg.css'
 import { toast, ToastContainer } from 'react-toastify';
 
 function NonVeg() {
