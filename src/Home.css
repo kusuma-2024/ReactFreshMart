@@ -1,39 +1,34 @@
 .home-container {
+  margin-top: 80px;
   padding: 20px;
   text-align: center;
 }
 
 .main-heading {
   font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  color: #2e8b57;
 }
 
 .sub-heading {
-  color: green;
   font-size: 1.2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 20px;
+  color: #555;
 }
 
 .product-grid {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 2rem;
+  justify-content: center;
+  gap: 20px;
 }
 
 .product-card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  width: 280px;
-  padding: 1rem;
+  border: 1px solid #ccc;
+  padding: 16px;
+  width: 250px;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: transform 0.2s ease;
-}
-
-.product-card:hover {
-  transform: scale(1.03);
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .product-image {
@@ -44,26 +39,27 @@
 }
 
 .visit-button {
-   margin-top: 12px;
-    background-color:darkmagenta;
-    color: white;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 20px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #0a8431;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .visit-button:hover {
-  background-color:#2e7d32;
-    transform: scale(1.1);
+  background-color: #800369;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
-.main-heading{
-  margin-top: 80px;
-  text-align: center;
-  color: #1d9f21;
-}
-.sub-heading{
-  color: #2a1479;
+
+
+/* 🧺 Basket symbol only for main heading */
+.basket-symbol::before {
+  content: '🧺';
+  margin-left: 8px;
+  font-size: 2.5rem;
 }

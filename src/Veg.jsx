@@ -60,7 +60,8 @@ function Veg() {
 
         {/* Price Filter */}
         <div className="filter-container">
-          <h4>Filter by Price</h4>
+          <h2>Filter by Price</h2>
+          
           {priceRanges.map((range) => (
             <div key={range.label}>
               <input
@@ -71,7 +72,7 @@ function Veg() {
                 )}
                 onChange={() => handlePriceFilterChange(range.value)}
               />
-              <label htmlFor={range.label}>{range.label}</label>
+              <label htmlFor={range.label}>{range.label}</label>           
             </div>
           ))}
           <button onClick={clearAllFilters} className="clear-filters">

@@ -1,6 +1,8 @@
 import React from 'react'
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
+import './signup.css';
+
 
 function SignUp() {
     const { register, handleSubmit, formState: { errors } } = useForm();

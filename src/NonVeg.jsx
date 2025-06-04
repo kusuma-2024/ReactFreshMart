@@ -52,10 +52,10 @@ function NonVeg() {
         <select id="price-range" value={selectedPriceRange.join('-')} onChange={handlePriceRangeChange}>
           <option value="0-1000">All Prices</option>
           <option value="0-100">₹0 - ₹100</option>
-          <option value="100-500">₹100 - ₹500</option>
-          <option value="500-1000">₹500 - ₹1000</option>
-          <option value="1000-2000">₹1000 - ₹2000</option>
-          <option value="2000-5000">₹2000 - ₹5000</option>
+          <option value="101-300">₹101 - ₹300</option>
+          <option value="301-500">₹301 - ₹500</option>
+          <option value="501-800">₹501 - ₹800</option>
+          <option value="801-1000">₹801 - ₹1000</option>
         </select>
       </div>
 

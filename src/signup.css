@@ -1,0 +1,121 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(145deg, #e3f2fd, #e8f5e9);
+  margin: 0;
+  padding: 0;
+}
+
+/* Container */
+.signup-container {
+  justify-content: center;
+  max-width: 520px;
+  margin: 60px 350px;
+  background: white;
+  padding: 30px 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to bottom right, #ffffff, #f1f8e9);
+}
+
+.signup-container h2 {
+  text-align: center;
+  color: #2e7d32;
+  margin-bottom: 24px;
+  text-shadow: 1px 1px 2px #a5d6a7;
+}
+
+/* Input Fields */
+.signup-container input[type="text"],
+.signup-container input[type="password"],
+.signup-container select {
+  width: 100%;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border: 2px solid #2cb931;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #f9fbe7;
+  transition: border-color 0.3s ease;
+}
+
+.signup-container input:focus,
+.signup-container select:focus {
+  border-color: #148919;
+  outline: none;
+}
+
+/* Radio Buttons */
+.gender-group {
+  margin: 15px 0;
+  font-size: 1rem;
+  color: #2e7d32;
+}
+
+.gender-group span {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.gender-group label {
+  margin-right: 20px;
+  color: #37474f;
+}
+
+/* Select Dropdown */
+.preference-group {
+  margin-top: 16px;
+  font-size: 1rem;
+}
+
+.preference-group label {
+  font-weight: bold;
+  color: #2e7d32;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Button */
+.signup-container button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(to right, #66bb6a, #43a047);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.signup-container button:hover {
+  background: linear-gradient(to right, #2e7d32, #1b5e20);
+  transform: scale(1.02);
+}
+
+/* Link */
+.signup-container p {
+  text-align: center;
+  margin-top: 16px;
+  color: #616161;
+}
+
+.signup-container a {
+  color: #1e88e5;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-container a:hover {
+  text-decoration: underline;
+}
+
+/* Error Messages */
+.error {
+  color: #d32f2f;
+  font-size: 0.9rem;
+  margin-top: -6px;
+  margin-bottom: 6px;
+}

@@ -1,0 +1,83 @@
+body {
+  
+  margin: 20;
+  padding: 20;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #e3f2fd, #f1f8e9);
+
+}
+
+/* Sign-in Container */
+.signin-container {
+  justify-content:center;
+  margin-top: 40;
+  max-width: 400px;
+  margin: 100px 400px;
+  padding: 30px 40px;
+  background: linear-gradient(to bottom right, #ffffff, #e8f5e9);
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(70, 59, 59, 0.1);
+  
+}
+
+/* Heading */
+.signin-container h2 {
+  text-align: center;
+  color: #2e7d32;
+  margin-bottom: 24px;
+  text-shadow: 1px 1px 2px #c8e6c9;
+}
+
+/* Input Fields */
+.signin-container input[type="text"],
+.signin-container input[type="password"] {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  border: 2px solid #24ad29;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #f9fbe7;
+  transition: border-color 0.3s ease;
+}
+
+.signin-container input:focus {
+  outline: none;
+  border-color: #43a047;
+}
+
+/* Submit Button */
+.signin-container button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: linear-gradient(to right, #66bb6a, #43a047);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.signin-container button:hover {
+  background: linear-gradient(to right, #2e7d32, #1b5e20);
+  transform: scale(1.03);
+}
+
+/* Sign-up Link */
+.signin-container p {
+  text-align: center;
+  margin-top: 20px;
+  color: #616161;
+}
+
+.signin-container a {
+  color: #1e88e5;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signin-container a:hover {
+  text-decoration: underline;
+}
