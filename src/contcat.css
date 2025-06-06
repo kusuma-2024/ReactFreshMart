@@ -10,7 +10,7 @@ body, html, #root {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 110%;
 }
 
 /* Main container with flex children */
@@ -18,7 +18,7 @@ body, html, #root {
   display: flex;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  padding: 200px;
+  padding: 180px;
   gap: 150px;
 }
 

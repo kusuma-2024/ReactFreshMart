@@ -45,7 +45,7 @@ function App() {
           <Link to="/NonVeg" className="nav-link nonveg-link">🍗 Non-Veg</Link>
           <Link to="/Veg" className="nav-link veg-link">🥦 Veg</Link>
           <Link to="/Fruits" className="nav-link fruits-link">🍎 Fruits</Link>
-          <Link to="/Chocolate" className="nav-link choc-link">🍫 Chocolate</Link>
+          <Link to="/Chocolate" className="nav-link choc-link">🍫 Bakery</Link>
           <Link to="/Cart" className="nav-link cart-link">🛒 Cart ({totalCartCount})</Link>
           <Link to="/Orders" className="nav-link orders-link">📦 Orders</Link>
           <Link to="/AboutUs" className="nav-link about-link">ℹ About Us</Link>

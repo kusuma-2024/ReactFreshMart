@@ -13,7 +13,7 @@ function Home() {
         <h1 className="main-heading">
           Welcome To Fresh Mart <span className="basket-symbol"></span>
         </h1>
-
+       <br></br>
         <h2 className="sub-heading">Your one-stop shop for fresh and quality products</h2>
 
         <div className="product-grid">

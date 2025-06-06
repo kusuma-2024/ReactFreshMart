@@ -1,9 +1,29 @@
+/* Reset and universal settings */
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  background: linear-gradient(to bottom right, #e0f7fa, #f1f8e9); /* Soft gradient */
+}
+
+body {
+  min-height: 350vh;
+}
+
+/* Main container */
 .home-container {
   margin-top: 80px;
-  padding: 20px;
+  padding: 18px 0 0 0; /* Removed left and right padding */
   text-align: center;
 }
 
+/* Headings */
 .main-heading {
   font-size: 2.5rem;
   color: #2e8b57;
@@ -11,17 +31,22 @@
 
 .sub-heading {
   font-size: 1.2rem;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   color: #555;
 }
 
+/* Product grid */
 .product-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+  margin-bottom: 5px;
+  width: 100%;
+  max-width: 100%;
 }
 
+/* Product card */
 .product-card {
   border: 1px solid #ccc;
   padding: 16px;
@@ -31,6 +56,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Product image */
 .product-image {
   width: 100%;
   height: 180px;
@@ -38,6 +64,7 @@
   border-radius: 8px;
 }
 
+/* Visit button */
 .visit-button {
   margin-top: 10px;
   padding: 10px 20px;
@@ -56,10 +83,18 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-
-/* 🧺 Basket symbol only for main heading */
+/* Basket symbol emoji */
 .basket-symbol::before {
   content: '🧺';
   margin-left: 8px;
   font-size: 2.5rem;
+}
+
+/* Footer */
+footer {
+  background: transparent;
+  text-align: center;
+  padding: 10px 20px 5px 20px;
+  margin-top: 0;
+  color: #333;
 }

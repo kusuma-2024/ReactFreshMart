@@ -25,6 +25,7 @@ function Cart() {
   const [customerEmail, setCustomerEmail] = useState('');
   const [paymentMethod, setPaymentMethod] = useState('');
   const [cardDetails, setCardDetails] = useState({ cardNumber: '', expiryDate: '', cvv: '' });
+  const [burst, setBurst] = useState(false);
   const taxPercentage = 5;
   const navigate = useNavigate();
 
@@ -83,6 +84,11 @@ function Cart() {
   })();
 
   const handleCompletePurchase = () => {
+    if (!customerEmail) {
+      alert("Please enter your email before completing purchase.");
+      return;
+    }
+
     const order = {
       id: 'ORD' + Date.now(),
       date: new Date().toLocaleString(),
@@ -115,8 +121,13 @@ function Cart() {
     setDiscountPercentage(0);
     setCouponDiscountPer(0);
     setCouponName('');
-    setPurchaseCompleted(true);
-    setCountdown(10);
+    setBurst(true);
+
+    setTimeout(() => {
+      setPurchaseCompleted(true);
+      setCountdown(10);
+      setBurst(false);
+    }, 600);
   };
 
   useEffect(() => {
@@ -152,32 +163,38 @@ function Cart() {
         <img src={item.image} alt={item.name} width="100" />
         <div className="cart-item-name">{item.name}</div>
         <div className="cart-item-price">₹{item.price}</div>
+        <div className="quantity-controls">
+          <button onClick={() => handleIncrement(item)} className="increment-btn">+</button>
           <span className="quantity-display">{item.quantity}</span>
-           <div className="quantity-controls">
-                   <button onClick={() => handleIncrement(item)} className="increment-btn">
-            +
-          </button>
+          <button onClick={() => handleDecrement(item)} className="decrement-btn" disabled={item.quantity === 1}>-</button>
         </div>
-          <button onClick={() => handleDecrement(item)} className="decrement-btn" disabled={item.quantity === 1}>
-            -
-          </button>
-          <button onClick={() => handleRemove(item)} className="remove-btn">Remove</button>
+        <button onClick={() => handleRemove(item)} className="remove-btn">Remove</button>
       </div>
     ))
   );
 
   return (
     <div className="cart-message">
+      {burst && (
+        <div className="balloon-blast">
+          {[...Array(10)].map((_, i) => (
+            <div key={i} className={`balloon balloon-${i + 1} burst`}></div>
+          ))}
+        </div>
+      )}
+
       {purchaseCompleted ? (
         <div className="cart-page-wrapper">
-          <div className="cart-container" style={{ textAlign: 'center' }}>
+          <div className=".cart-container2" style={{ textAlign: 'center' }}>
             <h1 style={{ color: 'green' }}>
               🎉 Purchase successful! Redirecting in {countdown} seconds...
             </h1>
           </div>
         </div>
       ) : cartItems.length === 0 ? (
-        <h1>Cart is Empty 🛒</h1>
+        <div className="empty-cart-container">
+          <h1>🛒 Your cart is empty</h1>
+        </div>
       ) : (
         <div className="cart-page-wrapper">
           <div className="cart-container">
@@ -203,20 +220,15 @@ function Cart() {
 
             <div className="cart-summary">
               <h5>Total Items: {cartCount}</h5>
-              <p>Total Amount: ₹{totalPrice}</p>
-              <p>Discount ({appliedDiscount}%): -₹{discountAmount}</p>
-              <p>Applied Coupon: {couponName ? '(${couponName})' : '(None)'}</p>
-              <p>Tax ({taxPercentage}%): +₹{tax}</p>
-              <p><strong>Final Amount: ₹{finalAmount}</strong></p>
+              <p> 💵 Total Amount: ₹{totalPrice}</p>
+              <p>🤑Discount ({appliedDiscount}%): -₹{discountAmount}</p>
+              <p> 🎟️ Applied Coupon: {couponName ? `(${couponName})` : '(None)'}</p>
+              <p>📝Tax ({taxPercentage}%): +₹{tax}</p>
+              <p><strong> 💰Final Amount: ₹{finalAmount}</strong></p>
 
               <div className="email-section">
                 <h4>📧 Enter your email for the order receipt:</h4>
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={customerEmail}
-                  onChange={(e) => setCustomerEmail(e.target.value)}
-                />
+                <input type="email" placeholder="Enter your email" value={customerEmail} onChange={(e) => setCustomerEmail(e.target.value)} />
               </div>
 
               <div className="payment-options">
@@ -232,13 +244,9 @@ function Cart() {
               {paymentMethod === 'upi' && (
                 <div>
                   <h3>Scan QR to Pay</h3>
-           <QRCode
-              value={`upi://pay?pa=9110545045@axl&pn=Store&am=${finalAmount}&cu=INR&tn=Order`}
-              size={200}
-            />
-
+                  <QRCode value={`upi://pay?pa=9110545045@axl&pn=Store&am=${finalAmount}&cu=INR&tn=Order`} size={200} />
                   <p>Amount: ₹{finalAmount}</p>
-                  <p>UPI ID:9110545045@axl </p>
+                  <p>UPI ID: 9110545045@axl</p>
                   <button onClick={handleCompletePurchase} className="complete-purchase-btn">
                     ✅ I have completed payment
                   </button>
@@ -248,27 +256,10 @@ function Cart() {
               {paymentMethod === 'card' && (
                 <div className="card-payment-box">
                   <h3>Enter Card Details</h3>
-                  <input
-                    type="text"
-                    placeholder="Card Number"
-                    value={cardDetails.cardNumber}
-                    onChange={(e) => setCardDetails({ ...cardDetails, cardNumber: e.target.value })}
-                  />
-                  <input
-                    type="text"
-                    placeholder="MM/YY"
-                    value={cardDetails.expiryDate}
-                    onChange={(e) => setCardDetails({ ...cardDetails, expiryDate: e.target.value })}
-                  />
-                  <input
-                    type="text"
-                    placeholder="CVV"
-                    value={cardDetails.cvv}
-                    onChange={(e) => setCardDetails({ ...cardDetails, cvv: e.target.value })}
-                  />
-                  <button onClick={handleCardPayment} className="complete-purchase-btn">
-                    ✅ Pay with Card
-                  </button>
+                  <input type="text" placeholder="Card Number" value={cardDetails.cardNumber} onChange={(e) => setCardDetails({ ...cardDetails, cardNumber: e.target.value })} />
+                  <input type="text" placeholder="MM/YY" value={cardDetails.expiryDate} onChange={(e) => setCardDetails({ ...cardDetails, expiryDate: e.target.value })} />
+                  <input type="text" placeholder="CVV" value={cardDetails.cvv} onChange={(e) => setCardDetails({ ...cardDetails, cvv: e.target.value })} />
+                  <button onClick={handleCardPayment} className="complete-purchase-btn">✅ Pay with Card</button>
                 </div>
               )}
             </div>

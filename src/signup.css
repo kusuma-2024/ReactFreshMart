@@ -9,9 +9,9 @@ body {
 .signup-container {
   justify-content: center;
   max-width: 520px;
-  margin: 60px 350px;
+  margin: 60px 380px;
   background: white;
-  padding: 30px 30px;
+  padding: 30px 50px;
   border-radius: 16px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   background: linear-gradient(to bottom right, #ffffff, #f1f8e9);
@@ -19,7 +19,7 @@ body {
 
 .signup-container h2 {
   text-align: center;
-  color: #2e7d32;
+  color: #046708;
   margin-bottom: 24px;
   text-shadow: 1px 1px 2px #a5d6a7;
 }
@@ -31,7 +31,7 @@ body {
   width: 100%;
   padding: 10px 14px;
   margin: 10px 0;
-  border: 2px solid #2cb931;
+  border: 2px solid #0c8810;
   border-radius: 8px;
   font-size: 1rem;
   background-color: #f9fbe7;
@@ -40,7 +40,7 @@ body {
 
 .signup-container input:focus,
 .signup-container select:focus {
-  border-color: #148919;
+  border-color: #024506;
   outline: none;
 }
 
@@ -48,7 +48,7 @@ body {
 .gender-group {
   margin: 15px 0;
   font-size: 1rem;
-  color: #2e7d32;
+  color: #06600b;
 }
 
 .gender-group span {
@@ -70,7 +70,7 @@ body {
 
 .preference-group label {
   font-weight: bold;
-  color: #2e7d32;
+  color: #0a6d0f;
   display: block;
   margin-bottom: 6px;
 }
@@ -91,7 +91,7 @@ body {
 }
 
 .signup-container button:hover {
-  background: linear-gradient(to right, #2e7d32, #1b5e20);
+  background: linear-gradient(to right, #107315, #1b5e20);
   transform: scale(1.02);
 }
 

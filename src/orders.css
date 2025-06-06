@@ -1,0 +1,172 @@
+/* Base styling */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #d4f1f4, #fcefe3);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+}
+
+/* Main content wrapper */
+.order-list {
+  max-width: 500px;
+  margin: 100px 450px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 30px;
+  background: #ffffffcc;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+}
+
+/* Heading block */
+.order-list h1 {
+  font-size: 22px;
+  margin: 0;
+  white-space: nowrap;
+  padding: 20px;
+  color: #092357;
+  background: #e9f4ff;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* Show Orders button wrapper */
+.show-order-button-wrapper {
+  text-align: center;
+  margin: 30px auto;
+  width: 100%;
+}
+
+/* Common button style */
+.continue-btn {
+  padding: 12px 24px;
+  background: linear-gradient(to right, #0a8431, #1bb75e);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.continue-btn:hover {
+  background: linear-gradient(to right, #800369, #b62583);
+  transform: translateY(-2px);
+}
+
+.continue-btn:focus {
+  outline: 3px solid #0a8431;
+  outline-offset: 2px;
+}
+
+/* When no orders exist */
+.empty-orders {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent; /* So it doesn't affect navbar */
+  z-index: 1;
+  text-align: center;
+  padding: 20px;
+}
+
+.basket-symbol::before {
+  content: '🧺';
+  margin-left: 8px;
+  font-size: 2.5rem;
+}
+
+.empty-orders h1 {
+  font-size: 36px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Individual order card */
+.order-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.order-card:hover {
+  transform: translateY(-4px);
+}
+
+.order-card h3 {
+  color: #0a4770;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.order-card p {
+  margin: 6px 0;
+  color: #333;
+  font-size: 14px;
+}
+
+.order-card h4 {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #2c3e50;
+}
+
+/* Items list */
+.order-items-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.order-item-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 15px;
+}
+
+.order-item-details {
+  font-size: 13px;
+  color: #444;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .order-list {
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 20px;
+  }
+
+  .continue-btn {
+    width: 100%;
+    font-size: 18px;
+  }
+}

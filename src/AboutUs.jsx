@@ -1,86 +1,58 @@
 import React from 'react';
 import './About.css';
+import { FaLeaf, FaShoppingCart, FaFish, FaTruck, FaStar, FaTree, FaApple } from 'react-icons/fa';
+import { GiCheeseWedge } from 'react-icons/gi';
+import { FaFolderTree } from 'react-icons/fa6';
 
-function AboutUs() {
+function About() {
   return (
-    <div className="App">
-      
-      <Hero />
-      <WhoWeAre />
-      <Mission />
-      <Products />
-      <WhyChooseUs />
-      <Footer />
+    <div className="about-page">
+      <h1>About Fresh Mart</h1>
+      <p className="subtitle">Your one-stop destination for high-quality and fresh food products.</p>
+
+      {/* Who We Are */}
+      <div className="section">
+        <h2 className="blue-heading">Who We Are</h2>
+        <p>
+          At <strong>Fresh Mart</strong>, we are committed to delivering <strong>fresh and high-quality food items</strong> right to your doorstep.
+          Our range includes <strong>vegetables, dairy products, meat and seafood, groceries, and bakery essentials</strong>. We prioritize freshness, quality, and customer satisfaction.
+        </p>
+      </div>
+
+      {/* Our Mission */}
+      <div className="mission-card">
+        <h1>Our Mission</h1>
+        <p>
+          To provide <strong>fresh, organic, and high-quality</strong> food products while maintaining the highest standards of hygiene, sustainability, and customer convenience.
+        </p>
+      </div>
+
+      {/* Our Products */}
+      <div className="products-section">
+        <h1>Our Products</h1>
+        <div className="products-grid">
+          <div className="product-item"><FaFish size={40} /><p>Meat & Seafood</p></div>
+          <div className="product-item"><FaLeaf size={40} /><p>Fresh Vegetables</p></div>
+                    <div className="product-item"><FaApple size={40} /><p>Organic Fruits</p></div>
+          <div className="product-item"><GiCheeseWedge size={40} /><p>Bakery & Beverages</p></div>
+          <div className="product-item"><FaShoppingCart size={40} /><p>Groceries & Staples</p></div>
+          <div className="product-item"><FaTruck size={40} /><p>Fast Delivery</p></div>
+        </div>
+      </div>
+
+      {/* Why Choose Us */}
+      <div className="choose-card">
+        <h1>Why Choose Fresh Mart?</h1>
+        <ul className="choose-list">
+          <li>✓ 100% Fresh & Quality Products</li>
+          <li>✓ Ethically Sourced & Hygienic</li>
+          <li>✓ Quick & Hassle-Free Delivery</li>
+          <li>✓ Affordable Prices & Discounts</li>
+          <li>✓ Excellent Customer Support</li>
+        </ul>
+      </div>
     </div>
   );
 }
 
-
-
-function Hero() {
-  return (
-    <section className="hero">
-      <h1>About Fresh Market</h1>
-      <h2>Your One-Stop Destination for Fresh & High-Quality Food</h2>
-      <p>Delivered right to your doorstep.</p>
-    </section>
-  );
-}
-
-function WhoWeAre() {
-  return (
-    <section id="who-we-are" className="section">
-      <h2>Who We Are</h2>
-      <p>At QuickBasket, we are committed to delivering <strong>fresh and high-quality food items</strong> right to your doorstep. Our range includes <strong>vegetables, dairy products, meat and seafood, groceries, and bakery essentials</strong>. We prioritize freshness, quality, and customer satisfaction.</p>
-    </section>
-  );
-}
-
-function Mission() {
-  return (
-    <section id="mission" className="section">
-      <h2>Our Mission</h2>
-      <p>To provide <strong>fresh, organic, and high-quality</strong> food products while maintaining the highest standards of hygiene, sustainability, and customer convenience.</p>
-    </section>
-  );
-}
-
-function Products() {
-  return (
-    <section id="products" className="section">
-      <h2>Our Products</h2>
-      <ul>
-        <li>Fresh Vegetables</li>
-        <li>Dairy Products</li>
-        <li>Meat & Seafood</li>
-        <li>Groceries & Staples</li>
-        <li>Bakery & Beverages</li>
-      </ul>
-    </section>
-  );
-}
-
-function WhyChooseUs() {
-  return (
-    <section id="why-choose-us" className="section">
-      <h2>Why Choose QuickBasket?</h2>
-      <ul>
-        <li>✔ 100% Fresh & Quality Products</li>
-        <li>✔ Ethically Sourced & Hygienic</li>
-        <li>✔ Quick & Hassle-Free Delivery</li>
-        <li>✔ Affordable Prices & Discounts</li>
-        <li>✔ Excellent Customer Support</li>
-      </ul>
-    </section>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="footer">
-      <p>&copy; 2025 QuickBasket. All rights reserved.</p>
-    </footer>
-  );
-}
-
-export default AboutUs;
+export default About;
